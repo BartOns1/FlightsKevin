@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Welcome to My Flights Application</title>
+        <meta charset="UTF-8"/>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            td {
+                border: 1px solid black;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Mijn Lijstje Met Tickets</h1>
+        <p>Dit moet hier nog komen. Under construction.</p>
+
+        <img src="ucuni.jpeg"/>
+
+        <table>
+            <tr th:each="t : ${flightTickets}">
+                <td th:text="${t.price}"></td>
+                <td th:text="${t.passenger.firstname}"></td>
+                <td th:text="${t.passenger.lastname}"></td>
+                <td th:text="${t.flight.number}"></td>
+            </tr>
+        </table>
+
+        <div th:text="${flightTickets}"></div>
+
+    </body>
+</html>
